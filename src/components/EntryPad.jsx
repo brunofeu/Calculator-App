@@ -1,26 +1,44 @@
-import React from 'react'
-import Button from './Button'
+import React from 'react';
+import ClearPad from './ClearPad';
+import NumberPad from './NumberPad';
+import OperatorPad from './OperatorPad';
 
 function EntryPad() {
   return (
-    <div>
+    <div className="entry-pad-container">
       <div>
-        <Button value="9" />
-        <Button value="8" />
-        <Button value="7" />
+
+      <div className="clear-container">
+        <ClearPad value="C"/>
+        <ClearPad value="AC"/>
       </div>
-      <div>
-        <Button value="6" />
-        <Button value="5" />
-        <Button value="4" />
+      <div className="numbers-container">
+        <div className="numbers-row">
+          <NumberPad value="7"/>
+          <NumberPad value="8"/>
+          <NumberPad value="9"/>
+        </div>
+        <div className="numbers-row">
+          <NumberPad value="4"/>
+          <NumberPad value="5"/>
+          <NumberPad value="6"/>
+        </div>
+        <div className="numbers-row">
+          <NumberPad value="1"/>
+          <NumberPad value="2"/>
+          <NumberPad value="3"/>
+        </div>
+        <div className="numbers-row">
+          <NumberPad value="0"/>
+        </div>
       </div>
-      <div>
-        <Button value="3" />
-        <Button value="2" />
-        <Button value="1" />
       </div>
-      <div>
-        <Button value="0" />
+      <div className="operator-container">
+        <OperatorPad value="/"/>
+        <OperatorPad value="x"/>
+        <OperatorPad value="-"/>
+        <OperatorPad value="+"/>
+        <OperatorPad value="="/>
       </div>
     </div>
   )

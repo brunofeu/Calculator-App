@@ -5,7 +5,7 @@ import EntryPad from './components/EntryPad';
 function App() {
   
   return (
-    <div className="App">
+    <div className="calculator-container">
       <Display/>
       <EntryPad/>
     </div>

@@ -1,0 +1,16 @@
+button {
+  height: 40px;
+  width: 40px;
+}
+
+.entry-pad-container {
+  display: flex;
+}
+
+.numbers-row {
+  display: flex;
+}
+
+.clear-container {
+  display: flex;
+}
