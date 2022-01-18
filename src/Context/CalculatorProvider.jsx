@@ -2,9 +2,10 @@ import { useState } from 'react';
 import CalculatorContext from './CalculatorContext';
 
 function CalculatorProvider({children}) {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [display, setDisplay] = useState(0);
 
-  const state = [menuOpen, setMenuOpen]
+  const state = {display, setDisplay}
+
   return (
     <CalculatorContext.Provider value={state}>
       {children}

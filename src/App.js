@@ -10,6 +10,6 @@ function App() {
       <EntryPad/>
     </div>
   );
-}
+};
 
 export default App;

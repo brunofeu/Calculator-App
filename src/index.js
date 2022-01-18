@@ -9,7 +9,7 @@ ReactDOM.render(
   <CalculatorProvider>
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
+    </React.StrictMode>
   </CalculatorProvider>,
   document.getElementById('root')
 );

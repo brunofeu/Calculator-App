@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Button() {
+function Button({value}) {
   return (
     <div>
-      Button
+      {value}
     </div>
   )
 }
