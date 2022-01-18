@@ -4,7 +4,7 @@ import CalculatorContext from '../Context/CalculatorContext'
 function Display() {
   const {display, setDisplay} = useContext(CalculatorContext)
   return (
-    <div>
+    <div className="display-container">
       {display}
     </div>
   )
