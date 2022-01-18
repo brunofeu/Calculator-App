@@ -4,19 +4,10 @@ import CalculatorContext from '../Context/CalculatorContext';
 
 function OperatorPad({value}) {
 
-  const {setDisplay,operator, setOperator,calculatorParamLeft, setCalculatorParamLeft, calculatorParamRight, setCalculatorParamRight} = useContext(CalculatorContext);
+  const {result, setResult, setDisplay,operator, setOperator,calculatorParamLeft, setCalculatorParamLeft, calculatorParamRight, setCalculatorParamRight} = useContext(CalculatorContext);
 
-  const handleClick = (event) => {
+  const switchOperator = (operator) => {
     let result = 0;
-    const selectedOperator = event.target.innerHTML
-    
-    if(selectedOperator !== '=') {
-      setOperator(selectedOperator)
-      setCalculatorParamLeft(calculatorParamRight)
-      setCalculatorParamRight('0')
-      return
-    }
-
     switch (operator) {
       case '/' :
         result = Number(calculatorParamLeft)/Number(calculatorParamRight)
@@ -30,10 +21,24 @@ function OperatorPad({value}) {
       case '+' :
         result = Number(calculatorParamLeft)+Number(calculatorParamRight)
         break
-        default: return;
+        default: return result;
     }
-    setCalculatorParamRight(result);
-    setDisplay(result);
+    return result
+  }
+  
+  const handleClick = (event) => {
+    const selectedOperator = event.target.innerHTML
+    const math = switchOperator(operator)
+    
+    if(selectedOperator !== '=') {
+      setOperator(selectedOperator)
+      setCalculatorParamLeft(math)
+      setCalculatorParamRight('0')
+    } else {
+      setCalculatorParamLeft('0')
+      setCalculatorParamRight(math);
+    }
+    setDisplay(math)
   }
 
   return (
