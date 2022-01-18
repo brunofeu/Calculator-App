@@ -9,6 +9,7 @@ function OperatorPad({value}) {
   const handleClick = (event) => {
     let result = 0;
     const selectedOperator = event.target.innerHTML
+    
     if(selectedOperator !== '=') {
       setOperator(selectedOperator)
       setCalculatorParamLeft(calculatorParamRight)

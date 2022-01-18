@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import CalculatorContext from '../Context/CalculatorContext';
 
 function ClearPad({value}) {
-  const {setDisplay, setCalculatorParamLeft, setCalculatorParamRight} = useContext(CalculatorContext);
+  const {setResult, setDisplay, setCalculatorParamLeft, setCalculatorParamRight} = useContext(CalculatorContext);
 
   const handleClick = (event) => {
     let selectedClear = event.target.innerHTML;
@@ -10,6 +10,7 @@ function ClearPad({value}) {
     setDisplay('0');
     if (selectedClear === 'C') return
     setCalculatorParamLeft('0')
+    setResult('0')
   }
 
   return (
