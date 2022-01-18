@@ -35,10 +35,6 @@ function OperatorPad({value}) {
     setDisplay(result);
   }
 
-// useEffect(() => {
-//   console.log(operator)
-// }, [operator])
-
   return (
     <div>
       <button type="button" onClick={handleClick}>{value}</button>
