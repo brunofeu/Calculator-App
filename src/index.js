@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import CalculatorProvider from './Context/CalculatorProvider';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <CalculatorProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  </CalculatorProvider>,
   document.getElementById('root')
 );
 
