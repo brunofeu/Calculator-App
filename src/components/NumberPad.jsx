@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
 import CalculatorContext from '../Context/CalculatorContext';
 
-function NumberPad({value}) {
-  const {setDisplay, operator, calculatorParamRight, setCalculatorParamRight} = useContext(CalculatorContext);
+function NumberPad({ value }) {
+  const { setDisplay, calculatorParamRight, setCalculatorParamRight } = useContext(CalculatorContext);
 
   const handleClick = (event) => {
     let selectedNumber = calculatorParamRight.concat(event.target.innerHTML)
@@ -11,7 +11,7 @@ function NumberPad({value}) {
     setCalculatorParamRight(`${selectedNumber}`)
     setDisplay(selectedNumber)
   }
-  
+
   return (
     <div>
       <button type="button" onClick={handleClick}>{value}</button>

@@ -2,35 +2,35 @@ import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
 import CalculatorContext from '../Context/CalculatorContext';
 
-function OperatorPad({value}) {
+function OperatorPad({ value }) {
 
-  const {result, setResult, setDisplay,operator, setOperator,calculatorParamLeft, setCalculatorParamLeft, calculatorParamRight, setCalculatorParamRight} = useContext(CalculatorContext);
+  const { setDisplay, operator, setOperator, calculatorParamLeft, setCalculatorParamLeft, calculatorParamRight, setCalculatorParamRight } = useContext(CalculatorContext);
 
   const switchOperator = (operator) => {
     let result = 0;
     switch (operator) {
-      case '/' :
-        result = Number(calculatorParamLeft)/Number(calculatorParamRight)
+      case '/':
+        result = Number(calculatorParamLeft) / Number(calculatorParamRight)
         break;
-      case 'x' :
-        result = Number(calculatorParamLeft)*Number(calculatorParamRight)
+      case 'x':
+        result = Number(calculatorParamLeft) * Number(calculatorParamRight)
         break;
-      case '-' :
-        result = Number(calculatorParamLeft)-Number(calculatorParamRight)
+      case '-':
+        result = Number(calculatorParamLeft) - Number(calculatorParamRight)
         break;
-      case '+' :
-        result = Number(calculatorParamLeft)+Number(calculatorParamRight)
+      case '+':
+        result = Number(calculatorParamLeft) + Number(calculatorParamRight)
         break
-        default: return result;
+      default: return result;
     }
     return result
   }
-  
+
   const handleClick = (event) => {
     const selectedOperator = event.target.innerHTML
     const math = switchOperator(operator)
-    
-    if(selectedOperator !== '=') {
+
+    if (selectedOperator !== '=') {
       setOperator(selectedOperator)
       setCalculatorParamLeft(math)
       setCalculatorParamRight('0')

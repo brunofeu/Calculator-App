@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import CalculatorContext from '../Context/CalculatorContext';
 
-function ClearPad({value}) {
-  const {setResult, setDisplay, setCalculatorParamLeft, setCalculatorParamRight} = useContext(CalculatorContext);
+function ClearPad({ value }) {
+  const { setResult, setDisplay, setCalculatorParamLeft, setCalculatorParamRight } = useContext(CalculatorContext);
 
   const handleClick = (event) => {
     let selectedClear = event.target.innerHTML;
