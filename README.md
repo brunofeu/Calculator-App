@@ -48,3 +48,16 @@ currently displayed.
 allows floating point numbers up to 3 places to be entered and operations to
 be carried out to the maximum number of decimal places entered for any one
 number.
+
+#
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+Before run the project, you need to install the dependencies:
+
+`npm install`
+
+Then in the project directory, you can run:
+
+`npm start`
+
